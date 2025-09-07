@@ -47,7 +47,9 @@ function toggle(id: number) {
   const todos = readDB();
   const idx = todos.findIndex(t => t.id === id);
   if (idx === -1) return console.error('No existe el id', id);
-  todos[idx].done = !todos[idx].done;
+  const item = todos[idx];
+  if (!item) return console.error('No existe el id', id);
+  todos[idx] = { ...item, done: !item.done };
   writeDB(todos);
   console.log('Actualizado:', todos[idx]);
 }
