@@ -12,6 +12,8 @@ function saluda(nombre: string): string {
 const u: Usuario = { id: 1, nombre: 'Ada' };
 console.log(saluda(u.nombre));
 
-// Descomenta para ver un error de tipos en el editor/tsc:
-// @ts-expect-error
+// Para ver un error de tipos en el editor/tsc,
+// prueba a llamar con un número:
 // console.log(saluda(123));
+
+export {} // aisla el archivo como módulo

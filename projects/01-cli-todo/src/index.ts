@@ -63,16 +63,47 @@ function main(argv: string[]) {
   const [cmd, ...rest] = argv.slice(2);
   switch (cmd) {
     case 'add':
-      add(rest.join(' ').trim());
+      {
+        const title = rest.join(' ').trim();
+        if (!title) {
+          console.error('Uso: add <titulo>');
+          return;
+        }
+        add(title);
+      }
       break;
     case 'list':
       list();
       break;
     case 'toggle':
-      toggle(Number(rest[0]));
+      {
+        const arg = rest[0];
+        if (arg === undefined) {
+          console.error('Uso: toggle <id>');
+          return;
+        }
+        const id = Number(arg);
+        if (!Number.isInteger(id)) {
+          console.error('El id debe ser entero');
+          return;
+        }
+        toggle(id);
+      }
       break;
     case 'remove':
-      remove_(Number(rest[0]));
+      {
+        const arg = rest[0];
+        if (arg === undefined) {
+          console.error('Uso: remove <id>');
+          return;
+        }
+        const id = Number(arg);
+        if (!Number.isInteger(id)) {
+          console.error('El id debe ser entero');
+          return;
+        }
+        remove_(id);
+      }
       break;
     default:
       console.log('Uso: add <titulo> | list | toggle <id> | remove <id>');

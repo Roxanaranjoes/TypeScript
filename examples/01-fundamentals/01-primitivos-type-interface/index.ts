@@ -14,3 +14,5 @@ type UsuarioPersona = Usuario & Persona;
 
 const up: UsuarioPersona = { id: 1, nombre: 'Ada' };
 console.log('UsuarioPersona:', up);
+
+export {} // aisla el archivo como módulo

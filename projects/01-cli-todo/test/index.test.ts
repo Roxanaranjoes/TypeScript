@@ -19,5 +19,6 @@ test('add crea un todo', () => {
   add('probar');
   const todos = readDB();
   expect(todos.length).toBe(1);
-  expect(todos[0].title).toBe('probar');
+  const first = todos[0]!;
+  expect(first.title).toBe('probar');
 });
