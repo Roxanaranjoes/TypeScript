@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "Aprende TypeScript desde cero hasta avanzado, en español, con ejemplos ejecutables.",
   "type": "module",
+  "packageManager": "pnpm@9",
   "engines": {
     "node": ">=18"
   },
